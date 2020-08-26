@@ -5,11 +5,16 @@ import './List.css';
 function List(props) {
     return (
         <section className="List">
-            <header class="List-header">
+            <header className="List-header">
                 <h2>{props.header}</h2>
             </header>
-            <div class="List-cards">
-                <Card title="Card1" content="Card 1 Content"></Card>
+            <div className="List-cards">
+                {props.content.map(card =>
+                    <Card title={card.title} content={card.content} key={card.id} />
+                )}
+                <button type="button" class="List-add-button">
+                    + Add Random Card
+                </button>
             </div>
         </section>
       );
