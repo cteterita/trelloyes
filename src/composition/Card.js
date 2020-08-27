@@ -1,6 +1,5 @@
 import React from 'react';
 import './Card.css';
-import { render } from '@testing-library/react';
 
 class Card extends React.Component {
     render() {
