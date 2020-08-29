@@ -4,6 +4,7 @@ import './List.css';
 
 class List extends React.Component {
     render() {
+        console.log('rendering list ', this.props.id, this.props.content);
         return (
             <section className="List">
                 <header className="List-header">
@@ -11,9 +12,18 @@ class List extends React.Component {
                 </header>
                 <div className="List-cards">
                     {this.props.content.map(card =>
-                        <Card title={card.title} content={card.content} key={card.id} />
+                        <Card 
+                            title={card.title} 
+                            content={card.content} 
+                            key={card.id} 
+                            id={card.id}
+                            deleteCard={this.props.deleteCard}
+                        />
                     )}
-                    <button type="button" className="List-add-button">
+                    <button 
+                        type="button" 
+                        className="List-add-button" 
+                        onClick={() => this.props.addRandomCard(this.props.id)}>
                         + Add Random Card
                     </button>
                 </div>
