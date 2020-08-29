@@ -4,7 +4,6 @@ import './List.css';
 
 class List extends React.Component {
     render() {
-        console.log('rendering list ', this.props.id, this.props.content);
         return (
             <section className="List">
                 <header className="List-header">
